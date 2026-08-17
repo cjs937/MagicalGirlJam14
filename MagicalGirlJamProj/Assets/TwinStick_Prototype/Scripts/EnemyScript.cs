@@ -6,7 +6,7 @@ public class EnemyScript : MonoBehaviour
     Transform player;
     Rigidbody rb;
 
-    bool canMove = true;
+    bool launched = false;
 
     public float speed;
 
@@ -18,16 +18,18 @@ public class EnemyScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!canMove) return;
+        if (launched) return;
         rb.linearVelocity = Vector3.Normalize(player.position - transform.position) * speed;
     }
 
-    public async void Launch(Vector3 dir)
+	public async void Launch(Vector3 dir)
     {
-        canMove = false;
+        if (!canLaunch) return;
+
+        launched = true;
 
         rb.linearVelocity = dir;
         await Task.Delay(1000);
-        canMove = true;
+		launched = false;
 	}
 }
