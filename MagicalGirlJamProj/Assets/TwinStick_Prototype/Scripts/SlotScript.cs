@@ -9,14 +9,16 @@ public class SlotScript : MonoBehaviour
 	[SerializeField] RectTransform panel;
 	[SerializeField] Sprite[] options;
 
-	[SerializeField] List<Image> slots;
+	PlayerAttackScript player;
+	List<Image> slots;
 	GameObject mySlot;
 
 	public bool canPull, spinning;
+	public int winTime = 10;
 	float timeOnScreen;
-	bool haveChecked;
-		
-    void Start()
+	bool jackpot;
+
+	void Start()
     {
 
     }
@@ -33,10 +35,11 @@ public class SlotScript : MonoBehaviour
             canPull = false;
 	}
 
-	public void Pull()
+	public bool Pull(PlayerAttackScript puller)
     {
-		if (!canPull || spinning) return;
+		if (!canPull || spinning) return false;
 		spinning = true;
+		player = puller;
 
 		if (mySlot == null)
 		{
@@ -49,6 +52,7 @@ public class SlotScript : MonoBehaviour
 		}
 
 		Spin();
+		return true;
     }
 
 	async void Spin()
@@ -81,8 +85,11 @@ public class SlotScript : MonoBehaviour
 		for (int i = 1; i < slots.Count; i++)
 			if (slots[0].sprite != slots[i].sprite) return;
 
-		while (!spinning)
+		for (int i=0; i<winTime; i++)
 		{
+			jackpot = true;
+			spinning = true;
+
 			foreach (Image img in slots)
 				img.color = Color.gold;
 			await Task.Delay(500);
@@ -91,6 +98,9 @@ public class SlotScript : MonoBehaviour
 				img.color = Color.black;
 			await Task.Delay(500);
 		}
+
+		jackpot = false;
+		spinning = false;
 	}
 
 	private void Update()
@@ -103,5 +113,8 @@ public class SlotScript : MonoBehaviour
 		if (timeOnScreen>10)
 			if (mySlot != null)
 				Destroy(mySlot.gameObject);
+
+		if (jackpot)
+			player.magic += Time.deltaTime * 30;
 	}
 }

@@ -9,6 +9,7 @@ public class EnemyScript : MonoBehaviour
     bool launched = false;
 
     public float speed;
+    public int hp;
 
     void Start()
     {
@@ -24,8 +25,6 @@ public class EnemyScript : MonoBehaviour
 
 	public async void Launch(Vector3 dir)
     {
-        if (!canLaunch) return;
-
         launched = true;
 
         rb.linearVelocity = dir;
