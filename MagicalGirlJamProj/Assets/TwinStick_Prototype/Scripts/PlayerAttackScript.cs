@@ -37,8 +37,8 @@ public class PlayerAttackScript : MonoBehaviour
 	}
 	void OnInteract()
 	{
-		foreach (SlotScript slot in FindObjectsByType<SlotScript>())
-			slot.Activate(gameObject)
+		foreach (GamblingScript gamble in FindObjectsByType<GamblingScript>())
+			gamble.TryActivate(gameObject);
 	}
 
 	private void Update()

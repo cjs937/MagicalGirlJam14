@@ -5,23 +5,20 @@ using System.Collections.Generic;
 
 public class SlotScript : GamblingScript
 {
-	[SerializeField] GameObject slotPrefab;
 	[SerializeField] Sprite[] options;
 	[SerializeField] Sprite winSprite;
 
 	List<Image> slots;
 
-	public int winTime = 5;
 
 	public override void Activate(GameObject player)
     {
 		base.Activate(player);
-		inProgress = true;
 
 		if (gambleView == null)
 		{
 			slots = new List<Image>();
-			gambleView = Instantiate(slotPrefab, panel);
+			gambleView = Instantiate(uiPrefab, panel);
 
 			foreach (Transform child in gambleView.transform)
 				foreach (Transform child2 in child)

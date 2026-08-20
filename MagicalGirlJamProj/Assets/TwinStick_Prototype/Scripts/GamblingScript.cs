@@ -5,21 +5,18 @@ public class GamblingScript : MonoBehaviour
 	// UI
 	[HideInInspector] public GameObject gambleView;
 	public RectTransform panel;
+	public GameObject uiPrefab;
 	float timeOnScreen;
 
 	// functionality
 	public bool canPull, inProgress;
+	public int winTime = 5;
 	public int cost;
 
 	//Player Scripts
 	public GameObject user;
 
 	public enum Rarity { none, common, uncommon, rare, epic, legendary};
-
-	void Start()
-    {
-
-	}
 
 	private void Update()
 	{
@@ -46,9 +43,16 @@ public class GamblingScript : MonoBehaviour
 			canPull = false;
 	}
 
+	public void TryActivate(GameObject player)
+	{
+		if (!canPull || inProgress) return;
+		Activate(player);
+	}
+
 	public virtual void Activate(GameObject player)
 	{
 		user = player.gameObject;
+		inProgress = true;
 	}
 
 	public virtual void Win(Rarity rarity)
