@@ -38,12 +38,7 @@ public class PlayerAttackScript : MonoBehaviour
 	void OnInteract()
 	{
 		foreach (SlotScript slot in FindObjectsByType<SlotScript>())
-			if (slot.Pull(this))
-			{
-				tutorial.SetActive(false);
-				spawner.SetActive(true);
-				magic -= 5;
-			}
+			slot.Activate(gameObject)
 	}
 
 	private void Update()
