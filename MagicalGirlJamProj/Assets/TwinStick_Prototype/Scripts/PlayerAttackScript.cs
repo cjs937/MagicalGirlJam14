@@ -20,7 +20,7 @@ public class PlayerAttackScript : MonoBehaviour
 	{
 		animator = GetComponent<Animator>();
 	}
-
+	/*
 	void OnAttackA()
 	{
 		if (magic <= 0) return;
@@ -30,7 +30,7 @@ public class PlayerAttackScript : MonoBehaviour
 		bullet.transform.up = transform.forward;
 		magic -= 5;
 	}
-
+	*/
 	void OnAttackB()
 	{
 		animator.Play("swing");

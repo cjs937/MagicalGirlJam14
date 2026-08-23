@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4109327195501154531}
   - component: {fileID: 4372560400067356097}
   - component: {fileID: 6911415928221646589}
+  - component: {fileID: -2408643927387679282}
+  - component: {fileID: 3967589140831501705}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -155,3 +157,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   speed: 5
   hp: 3
+--- !u!114 &-2408643927387679282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514107708258137140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ec1c6d47d7388844aa6a4a5d4e817b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+--- !u!114 &3967589140831501705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514107708258137140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89357f224f8277d46ac706f931d750cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  flashTime: 0.1
+  hitFlashMaterial: {fileID: 2100000, guid: 66660f84d87f23241b751ddc91ade046, type: 2}

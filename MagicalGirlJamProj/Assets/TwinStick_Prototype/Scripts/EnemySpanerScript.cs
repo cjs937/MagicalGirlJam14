@@ -33,9 +33,7 @@ public class EnemySpanerScript : MonoBehaviour
 	public void SpawnEnemy(int maxDifficulty)
     {
         Transform newEnemy=Instantiate(enemyPrefabs[Random.Range(0, maxDifficulty)]).transform;
-        newEnemy.transform.position = new Vector3
-            (Random.Range(-maxSpawnPosition.x, maxSpawnPosition.x),
-            1,
-            Random.Range(-maxSpawnPosition.y, maxSpawnPosition.y));
+        newEnemy.transform.position = new Vector3(Random.Range(-maxSpawnPosition.x, maxSpawnPosition.x), 1, Random.Range(-maxSpawnPosition.y, maxSpawnPosition.y));
+        newEnemy.gameObject.SetActive(true);
     }
 }
