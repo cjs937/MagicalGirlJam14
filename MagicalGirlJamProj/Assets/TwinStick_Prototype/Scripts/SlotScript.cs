@@ -3,56 +3,29 @@ using UnityEngine.UI;
 using UnityEngine;
 using System.Collections.Generic;
 
-public class SlotScript : MonoBehaviour
+public class SlotScript : GamblingScript
 {
-	[SerializeField] GameObject slotPrefab;
-	[SerializeField] RectTransform panel;
 	[SerializeField] Sprite[] options;
+	[SerializeField] Sprite winSprite;
 
-	PlayerAttackScript player;
 	List<Image> slots;
-	GameObject mySlot;
 
-	public bool canPull, spinning;
-	public int winTime = 10;
-	float timeOnScreen;
-	bool jackpot;
 
-	void Start()
+	public override void Activate(GameObject player)
     {
+		base.Activate(player);
 
-    }
-
-	private void OnTriggerStay(Collider collider)
-	{
-		if (collider.gameObject.tag=="Player")
-            canPull = true;
-	}
-
-	private void OnTriggerExit(Collider collider)
-	{
-		if (collider.gameObject.tag=="Player")
-            canPull = false;
-	}
-
-	public bool Pull(PlayerAttackScript puller)
-    {
-		if (!canPull || spinning) return false;
-		spinning = true;
-		player = puller;
-
-		if (mySlot == null)
+		if (gambleView == null)
 		{
 			slots = new List<Image>();
-			mySlot = Instantiate(slotPrefab, panel);
+			gambleView = Instantiate(uiPrefab, panel);
 
-			foreach (Transform child in mySlot.transform)
+			foreach (Transform child in gambleView.transform)
 				foreach (Transform child2 in child)
 					slots.Add(child2.GetComponent<Image>());
 		}
 
 		Spin();
-		return true;
     }
 
 	async void Spin()
@@ -81,40 +54,40 @@ public class SlotScript : MonoBehaviour
 
 	async void CheckRewards()
 	{
-		spinning = false;
+		int rarity = 0;
+
+		inProgress = false;
 		for (int i = 1; i < slots.Count; i++)
-			if (slots[0].sprite != slots[i].sprite) return;
+			if (slots[i].sprite == winSprite)
+				rarity++;
 
-		for (int i=0; i<winTime; i++)
+		int match = 0;
+		if (slots[0] == slots[1])
+			match++;
+		if (slots[1] == slots[2])
+			match++;
+		if (slots[0] == slots[2])
+			match++;
+
+		rarity = Mathf.Min(5, rarity + match);
+
+		if (rarity > 0)
 		{
-			jackpot = true;
-			spinning = true;
+			Win((Rarity)rarity);
+			for (int i = 0; i < winTime; i++)
+			{
+				inProgress = true;
 
-			foreach (Image img in slots)
-				img.color = Color.gold;
-			await Task.Delay(500);
+				foreach (Image img in slots)
+					img.color = Color.gold;
+				await Task.Delay(500);
 
-			foreach (Image img in slots)
-				img.color = Color.black;
-			await Task.Delay(500);
+				foreach (Image img in slots)
+					img.color = Color.black;
+				await Task.Delay(500);
+			}
 		}
 
-		jackpot = false;
-		spinning = false;
-	}
-
-	private void Update()
-	{
-		if (!spinning && mySlot != null)
-			timeOnScreen += Time.deltaTime;
-		else
-			timeOnScreen = 0;
-
-		if (timeOnScreen>10)
-			if (mySlot != null)
-				Destroy(mySlot.gameObject);
-
-		if (jackpot)
-			player.magic += Time.deltaTime * 30;
+		inProgress = false;
 	}
 }
