@@ -10,11 +10,6 @@ public class RouletteScript : GamblingScript
 	public float spinSpeed;
 	List<Transform> pockets;
 
-	void Start()
-	{
-
-	}
-
 	public override void Activate(GameObject player)
 	{
 		base.Activate(player);
