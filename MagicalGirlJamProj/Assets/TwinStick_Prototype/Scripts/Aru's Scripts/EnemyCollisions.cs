@@ -6,10 +6,15 @@ public class EnemyCollisions : MonoBehaviour
 {
     public float health;
     public Vector2 randomHealth = new Vector2 (3f, 5f);
+    EnemyManager manager;
+    EnemyBase baseScript;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //health = Random.Range(randomHealth.x, randomHealth.y);
+        health = Random.Range(randomHealth.x, randomHealth.y);
+        manager = FindAnyObjectByType<EnemyManager>();
+        baseScript = GetComponent<EnemyBase>();
     }
 
     // Update is called once per frame
@@ -108,7 +113,9 @@ public class EnemyCollisions : MonoBehaviour
         if(health <= 0f)
         {
             //player.GetComponent<TopDownKillCounter>().killCount += 1f;
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            if(manager)
+                manager.RemoveEnemy(baseScript);
         }
     }
 }

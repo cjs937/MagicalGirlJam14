@@ -1,29 +1,17 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class followPlayer : MonoBehaviour
+public class followPlayer : EnemyBase
 {
+    public float moveSpeed = 5;
+    public float stoppingDistance = 2;
 
-    public Transform playerMarker; //takes in player gameObject
-
-    public float movespeed = 5;
-    public float stoppingDiostance = 2;
-  
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void DoMove()
     {
-        playerMarker = GameObject.FindWithTag("Player").transform;
+        //transform.LookAt(playerPos);
+        float distToPlayer = Vector3.Distance(playerPos.position, transform.position);
+        float speed = Mathf.Lerp(moveSpeed, 0, Mathf.Min(1, distToPlayer / stoppingDistance));
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        transform.LookAt(playerMarker);
-
-        if (Vector3.Distance(transform.position, playerMarker.position) > stoppingDiostance)
-            {
-            transform.position += Vector3.Normalize(playerMarker.position - transform.position) * movespeed * Time.deltaTime;
-            }
+        rigidBody.linearVelocity = Vector3.Normalize(playerPos.position - transform.position) * moveSpeed;
     }
 }

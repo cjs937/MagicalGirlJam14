@@ -13,11 +13,13 @@ GameObject:
   - component: {fileID: 1587650954165865724}
   - component: {fileID: 4109327195501154531}
   - component: {fileID: 4372560400067356097}
-  - component: {fileID: 6911415928221646589}
   - component: {fileID: -2408643927387679282}
   - component: {fileID: 3967589140831501705}
+  - component: {fileID: 3233529401991192274}
+  - component: {fileID: 6936084408268457806}
+  - component: {fileID: 2314206388023690231}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: StraightLineSlime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,20 +145,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &6911415928221646589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 514107708258137140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9f53089b43923844b47075b74c79056, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  speed: 5
-  hp: 3
 --- !u!114 &-2408643927387679282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,3 +173,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   flashTime: 0.1
   hitFlashMaterial: {fileID: 2100000, guid: 66660f84d87f23241b751ddc91ade046, type: 2}
+--- !u!114 &3233529401991192274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514107708258137140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 685335789c9a49b49abbaedf7395d887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::followPlayer
+  moveSpeed: 5
+  stoppingDistance: 2
+--- !u!114 &6936084408268457806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514107708258137140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0a559cc5a50ea43b67f8f1839a9751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamagePlayer
+  continuousOverlap: 1
+  damageCooldown: 1
+--- !u!114 &2314206388023690231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514107708258137140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d16e2395b535c54ab9d352ccaeb7715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBase
