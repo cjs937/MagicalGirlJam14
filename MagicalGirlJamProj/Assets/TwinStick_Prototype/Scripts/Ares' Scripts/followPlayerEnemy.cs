@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class followPlayer : EnemyBase
+public class followPlayerEnemy : EnemyBase
 {
     public float moveSpeed = 5;
     public float stoppingDistance = 2;

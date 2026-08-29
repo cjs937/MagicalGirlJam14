@@ -8,12 +8,12 @@ public class DamagePlayer : MonoBehaviour
     PlayerHealth playerHealth;
     public float damageCooldown = 1.0f;
     float lastDamageTime = 0;
-    float damage;
+    public float damage;
 
     // Update is called once per frame
     void Update()
     {
-        if(continuousOverlap && playerHealth && Time.time >= lastDamageTime + damageCooldown)
+        if(continuousOverlap && playerHealth)
         {
             DoDamage(damage, playerHealth);
         }
@@ -37,7 +37,10 @@ public class DamagePlayer : MonoBehaviour
 
     void DoDamage(float damage, PlayerHealth player)
     {
-        player.TakeDamage(damage);
-        lastDamageTime = Time.time;
+        if (Time.time >= lastDamageTime + damageCooldown)
+        {
+            player.TakeDamage(damage);
+            lastDamageTime = Time.time;
+        }
     }
 }

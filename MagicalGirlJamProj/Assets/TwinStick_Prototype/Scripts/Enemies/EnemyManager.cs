@@ -43,6 +43,16 @@ public class EnemyManager : MonoBehaviour
     public void RemoveEnemy(EnemyBase enemy)
     {
         currEnemies.Remove(enemy);
-        Destroy(enemy);
+        Destroy(enemy.gameObject);
+    }
+
+    public void StopAllEnemies()
+    {
+        foreach(EnemyBase enemy in currEnemies)
+        {
+            enemy.gameObject.SetActive(false);
+        }
+
+        gameObject.SetActive(false);
     }
 }
