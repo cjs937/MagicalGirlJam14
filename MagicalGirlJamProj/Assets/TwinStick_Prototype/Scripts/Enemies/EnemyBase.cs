@@ -13,7 +13,7 @@ public class EnemyBase : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
-        playerPos = GameObject.FindWithTag("Player").transform;
+        playerPos = FindAnyObjectByType<PlayerMovementScript>().transform; //GameObject.FindWithTag("Player").transform;
     }
 
     protected virtual void DoMove()

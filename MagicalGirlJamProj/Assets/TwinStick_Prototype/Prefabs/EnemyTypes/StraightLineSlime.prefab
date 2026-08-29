@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::followPlayer
   moveSpeed: 5
-  stoppingDistance: 2
+  stoppingDistance: 1
 --- !u!114 &6936084408268457806
 MonoBehaviour:
   m_ObjectHideFlags: 0

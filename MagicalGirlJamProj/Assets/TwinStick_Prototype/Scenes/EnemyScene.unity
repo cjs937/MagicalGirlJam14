@@ -2624,7 +2624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyManager
   enemyTypes:
   - {fileID: 3233529401991192274, guid: 19f4e045ba7d2f64ebaefb7407c2f552, type: 3}
-  maxEnemies: 30
+  maxEnemies: 1
   currEnemies: []
   spawnPoints:
   - {fileID: 1096557374}
