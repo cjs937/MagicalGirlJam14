@@ -30,7 +30,6 @@ public class EnemyCollisions : MonoBehaviour
             Transform bullet = other.transform;
             string bulletType = other.transform.GetComponent<BulletCollisions>().bulletType;
             float bulletDamage = other.transform.GetComponent<BulletCollisions>().bulletDamage;
-            Transform spawnOnDeath = other.transform.GetComponent<BulletCollisions>().spawnOnDeath;
 
             if(bulletType == "BASIC")
             {
@@ -71,30 +70,12 @@ public class EnemyCollisions : MonoBehaviour
 
             if(bulletType == "SLOW")
             {
-                if(health == 1f)
-                {
-                    Vector3 spawnPos = new Vector3(transform.position.x, 0f, transform.position.z);
-
-                    Transform activeSlow = Instantiate(spawnOnDeath, spawnPos, spawnOnDeath.rotation);
-                    activeSlow.gameObject.SetActive(true);
-                }
-
-                //other.GetComponent<EnemyScript>().speed = 0;
-                
                 TakeDamage(bulletDamage);
                 other.gameObject.SetActive(false);
             }
 
             if(bulletType == "EXPLOSIVE")
             {
-                if(health == 1f)
-                {
-                    Vector3 spawnPos = new Vector3(transform.position.x, 0f, transform.position.z);
-
-                    Transform activeExplosive = Instantiate(spawnOnDeath, spawnPos, spawnOnDeath.rotation);
-                    activeExplosive.gameObject.SetActive(true);
-                }
-
                 TakeDamage(bulletDamage);
                 other.gameObject.SetActive(false);
             }

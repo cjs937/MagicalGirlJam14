@@ -914,6 +914,7 @@ MonoBehaviour:
   bulletDamage: 1
   bulletType: SLOW
   spawnOnDeath: {fileID: 758710867}
+  lifeTime: 3
 --- !u!54 &331504529
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2625,7 +2626,7 @@ MonoBehaviour:
   enemyTypes:
   - {fileID: 4938076173307074776, guid: 057cd05f74881f641b1f94b0b20476c7, type: 3}
   - {fileID: 3233529401991192274, guid: 19f4e045ba7d2f64ebaefb7407c2f552, type: 3}
-  maxEnemies: 30
+  maxEnemies: 20
   currEnemies: []
   spawnPoints:
   - {fileID: 1096557374}
@@ -2934,6 +2935,7 @@ MonoBehaviour:
   bulletDamage: 1
   bulletType: KNOCKBACK
   spawnOnDeath: {fileID: 0}
+  lifeTime: 3
 --- !u!54 &1050607537
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3395,6 +3397,7 @@ MonoBehaviour:
   bulletDamage: 1
   bulletType: CRITICAL
   spawnOnDeath: {fileID: 0}
+  lifeTime: 3
 --- !u!54 &1157385370
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5850,6 +5853,7 @@ MonoBehaviour:
   bulletDamage: 1
   bulletType: EXPLOSIVE
   spawnOnDeath: {fileID: 2046053934}
+  lifeTime: 3
 --- !u!54 &1787464165
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7159,6 +7163,7 @@ MonoBehaviour:
   bulletDamage: 1
   bulletType: BASIC
   spawnOnDeath: {fileID: 0}
+  lifeTime: 3
 --- !u!1 &2135094152
 GameObject:
   m_ObjectHideFlags: 0

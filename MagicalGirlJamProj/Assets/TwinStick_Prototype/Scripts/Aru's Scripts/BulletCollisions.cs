@@ -5,15 +5,30 @@ public class BulletCollisions : MonoBehaviour
     public int bulletDamage;
     public string bulletType;
     public Transform spawnOnDeath;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    public float lifeTime = 3f;
+
+    private void Start()
     {
-        
+        Invoke(nameof(DestroyBullet), lifeTime);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if(other.tag != "Player" && other.tag != "Bullet")
+            DestroyBullet();
+    }
+
+    void DestroyBullet()
+    {
+        if(spawnOnDeath)
+        {
+            Vector3 spawnPos = new Vector3(transform.position.x, 0f, transform.position.z);
+
+            Transform deathEffect= Instantiate(spawnOnDeath, spawnPos, spawnOnDeath.rotation);
+            deathEffect.gameObject.SetActive(true);
+        }
+
+        Destroy(gameObject);
     }
 }
