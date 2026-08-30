@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class followPlayerEnemy : EnemyBase
 {
-    public float moveSpeed = 5f;
     public float stoppingDistance = 2f;
     protected override void DoMove()
     {

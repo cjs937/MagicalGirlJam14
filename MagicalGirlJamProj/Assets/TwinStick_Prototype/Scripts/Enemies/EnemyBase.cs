@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.WSA;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -9,6 +8,7 @@ public class EnemyBase : MonoBehaviour
     protected Rigidbody rigidBody;
     float baseSpeed;
     bool launched;
+    public float moveSpeed = 5f;
 
     void Start()
     {
