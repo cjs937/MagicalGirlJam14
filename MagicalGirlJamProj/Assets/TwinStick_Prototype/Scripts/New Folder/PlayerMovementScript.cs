@@ -12,17 +12,14 @@ public class PlayerMovementScript : MonoBehaviour
 	float currentSpeed;
 
 	public bool swinging;
-	public float walkSpeed;
 
 	public bool dashing;
-	public float dashTime;
-	public float dashSpeed;
 	float currentDashTime;
 
 	void Start()
 	{
 		mainCamera = Camera.main;
-		currentSpeed = walkSpeed;
+		currentSpeed = StatLibrary.Instance.walkSpeed;
 		rb = GetComponent<Rigidbody>();
 	}
 

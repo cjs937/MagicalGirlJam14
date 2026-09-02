@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SteeringEnemy : EnemyBase
 {
-    float maxSpeed = 5;
+    //float maxSpeed = 5;
 
     protected override void DoMove()
     {

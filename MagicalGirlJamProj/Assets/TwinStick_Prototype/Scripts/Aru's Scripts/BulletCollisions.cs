@@ -11,6 +11,7 @@ public class BulletCollisions : MonoBehaviour
     private void Start()
     {
         Invoke(nameof(DestroyBullet), lifeTime);
+        
     }
 
     private void OnTriggerEnter(Collider other)

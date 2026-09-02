@@ -26,7 +26,7 @@ public class ProjectileScript : MonoBehaviour
 
         if (enemy != null)
         {
-			enemy.hp--;
+			enemy.hp --;
             if (enemy.hp <= 0)
                 Destroy(enemy.gameObject);
 

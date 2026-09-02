@@ -29,7 +29,7 @@ public class EnemyCollisions : MonoBehaviour
         {
             Transform bullet = other.transform;
             string bulletType = other.transform.GetComponent<BulletCollisions>().bulletType;
-            float bulletDamage = other.transform.GetComponent<BulletCollisions>().bulletDamage;
+            float bulletDamage = StatLibrary.Instance.attackPower;
 
             if(bulletType == "BASIC")
             {

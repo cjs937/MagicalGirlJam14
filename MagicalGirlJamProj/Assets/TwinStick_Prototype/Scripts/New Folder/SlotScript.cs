@@ -73,7 +73,7 @@ public class SlotScript : GamblingScript
 
 		if (rarity > 0)
 		{
-			Win((Rarity)rarity);
+			Win(Rarity.BulletTypeWin);
 			for (int i = 0; i < winTime; i++)
 			{
 				inProgress = true;

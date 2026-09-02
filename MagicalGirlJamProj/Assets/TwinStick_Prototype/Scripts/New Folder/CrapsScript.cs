@@ -69,13 +69,13 @@ public class CrapsScript : GamblingScript
 			Loss();
 		else
 		{
-			int winnings = total - 7;
-			
-			if (die1.sprite == die2.sprite)
-				winnings++;
-
-			winnings = Mathf.Min(winnings, 5);
-			Win((Rarity)winnings);
+			// int winnings = total - 7;
+			//
+			// if (die1.sprite == die2.sprite)
+			// 	winnings++;
+			//
+			// //winnings = Mathf.Min(winnings, 5);
+			Win(Rarity.StatWin);
 		}
 	}
 }

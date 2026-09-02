@@ -63,9 +63,9 @@ public class RouletteScript : GamblingScript
 	{
 		string pocketName = pockets[pocketIndex].name;
 		if (pocketName.Contains("B"))
-			Win(Rarity.common);
+			Win(Rarity.BulletModeWin);
 		else if (pocketName.Contains("G"))
-			Win(Rarity.epic);
+			Win(Rarity.BigBulletModeWin);
 		else Loss();
 	}
 }

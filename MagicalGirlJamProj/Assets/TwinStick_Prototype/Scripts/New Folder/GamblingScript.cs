@@ -12,11 +12,13 @@ public class GamblingScript : MonoBehaviour
 	public bool canPull, inProgress;
 	public int winTime = 5;
 	public int cost;
+	PlayerBulletFire RewardRef;
+	StatLibrary StatsManager;
 
 	//Player Scripts
 	public GameObject user;
 
-	public enum Rarity { none, common, uncommon, rare, epic, legendary};
+	public enum Rarity {StatWin,BulletTypeWin,BulletModeWin,BigBulletModeWin};
 
 	private void Update()
 	{
@@ -58,6 +60,21 @@ public class GamblingScript : MonoBehaviour
 	public virtual void Win(Rarity rarity)
     {
 		Debug.Log("You won a " + rarity + " item");
+		switch (rarity)
+		{
+			case Rarity.BulletModeWin:
+				RewardRef.GiveMeBulletSpread(Random.Range(1, 2));
+				break;
+			case Rarity.BigBulletModeWin:
+				RewardRef.GiveMeBulletSpread(3);
+				break;
+			case Rarity.BulletTypeWin:
+				RewardRef.GiveMeBulletType(Random.Range(1, 4));
+				break;
+			case Rarity.StatWin:
+				StatsManager.attackPower++;
+				break;
+		}
     }
 
 	public virtual void Loss()

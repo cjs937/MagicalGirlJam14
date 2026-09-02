@@ -191,10 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   swinging: 0
-  walkSpeed: 10
   dashing: 0
-  dashTime: 0.1
-  dashSpeed: 40
 --- !u!114 &257589255881634468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   bulletPrefab: {fileID: 30426748670492117, guid: d62beaf312786fb4b8562faaa195ed0c, type: 3}
+  spawner: {fileID: 0}
+  tutorial: {fileID: 0}
   magic: 30
   maxMagic: 100
   magicSlider: {fileID: 0}
