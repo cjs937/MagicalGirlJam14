@@ -14,9 +14,9 @@ public class BulletFireUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.GetComponent<PlayerBulletFire>().currentAmmunition > 0)
+        if(StatLibrary.Instance.currentAmmunition > 0)
         {
-            ammoText.text = "AMMO " + player.GetComponent<PlayerBulletFire>().currentAmmunition + "/" + player.GetComponent<PlayerBulletFire>().maxAmmunition;
+            ammoText.text = "AMMO " + StatLibrary.Instance.currentAmmunition + "/" + StatLibrary.Instance.maxAmmunition;
         }
         else
         {

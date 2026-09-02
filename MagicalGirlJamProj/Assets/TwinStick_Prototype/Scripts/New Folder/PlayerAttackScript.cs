@@ -10,8 +10,6 @@ public class PlayerAttackScript : MonoBehaviour
 	[SerializeField] GameObject tutorial;
 
 	[Header("Magic")]
-	public float magic;
-	public int maxMagic;
 	public Slider magicSlider;
 	public Slider magicDebtSlider;
 	public Slider magicOverfillSlider;
@@ -48,24 +46,24 @@ public class PlayerAttackScript : MonoBehaviour
 
 	void ManageMagicSliders()
 	{
-		magicOverfillSlider.maxValue = maxMagic;
-		magicDebtSlider.maxValue = maxMagic;
-		magicSlider.maxValue = maxMagic;
+		magicOverfillSlider.maxValue = StatLibrary.Instance.maxMagic;
+		magicDebtSlider.maxValue = StatLibrary.Instance.maxMagic;
+		magicSlider.maxValue = StatLibrary.Instance.maxMagic;
 
-		if (magic < 0)
+		if (StatLibrary.Instance.magic < 0)
 		{
 			magicDebtSlider.gameObject.SetActive(true);
-			magicDebtSlider.value = Mathf.Min(Mathf.Abs(magic), maxMagic);
+			magicDebtSlider.value = Mathf.Min(Mathf.Abs(StatLibrary.Instance.magic), StatLibrary.Instance.maxMagic);
 		}
 		else
 		{
 			magicDebtSlider.gameObject.SetActive(false);
-			magicSlider.value = Mathf.Min(magic, maxMagic);
+			magicSlider.value = Mathf.Min(StatLibrary.Instance.magic, StatLibrary.Instance.maxMagic);
 
-			if (magic > maxMagic)
+			if (StatLibrary.Instance.magic > StatLibrary.Instance.maxMagic)
 			{
 				magicOverfillSlider.gameObject.SetActive(true);
-				magicOverfillSlider.value = Mathf.Min(magic-maxMagic, maxMagic);
+				magicOverfillSlider.value = Mathf.Min(StatLibrary.Instance.magic-StatLibrary.Instance.maxMagic, StatLibrary.Instance.maxMagic);
 			}
 			else
 				magicOverfillSlider.gameObject.SetActive(false);
