@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -8,10 +9,14 @@ public class GameStateManager : MonoBehaviour
     //public GameObject gameOverInstance;
     PlayerMovementScript playerMovementScript;
     EnemyManager enemyManager;
+    TimerScript timer;
+    public TextMeshProUGUI timerText;
+
     void Start()
     {
         playerMovementScript = FindAnyObjectByType<PlayerMovementScript>();
         enemyManager = FindAnyObjectByType<EnemyManager>();
+        timer = FindAnyObjectByType<TimerScript>();
         gameOverScreen.SetActive(false);
     }
 
@@ -19,9 +24,9 @@ public class GameStateManager : MonoBehaviour
     {
         playerMovementScript.enabled = false;
         enemyManager.StopAllEnemies();
-
-        //gameOverInstance = Instantiate(gameOverScreenPrefab);
-        //gameOverInstance.transform.parent = canvas.transform;
+        timerText.text = "You lasted " + Mathf.Floor(timer.time).ToString() + " seconds! \n" + 
+            "Enemy kills: " + enemyManager.killCount;
+        timer.enabled = false;
         gameOverScreen.SetActive(true);
     }
 

@@ -12,6 +12,7 @@ public class EnemyManager : MonoBehaviour
     float lastSpawnTime = 0;
 
     public int curveIndex = 0;
+    public int killCount = 0;
 
     void Update()
     { 
@@ -44,6 +45,7 @@ public class EnemyManager : MonoBehaviour
     {
         currEnemies.Remove(enemy);
         Destroy(enemy.gameObject);
+        ++killCount;
     }
 
     public void StopAllEnemies()

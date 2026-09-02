@@ -8,7 +8,5 @@ public class SteeringEnemy : EnemyBase
     {
         Vector3 desiredVelocity = Vector3.Normalize(playerPos.position - transform.position) * moveSpeed;
         rigidBody.linearVelocity += (desiredVelocity - rigidBody.linearVelocity) * Time.deltaTime;
-
-        Debug.Log(rigidBody.linearVelocity);
     }
 }
