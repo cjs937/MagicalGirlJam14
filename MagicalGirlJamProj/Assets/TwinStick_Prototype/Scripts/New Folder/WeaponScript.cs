@@ -18,7 +18,7 @@ public class WeaponScript : MonoBehaviour
 
 	void Hit(GameObject go)
 	{
-		EnemyScript enemy=go.GetComponent<EnemyScript>();
+		EnemyBase enemy=go.GetComponent<EnemyBase>();
 		
 		if (enemy != null) 
 			enemy.Launch((go.transform.position - owner.position) * hitForce);

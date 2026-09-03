@@ -7,7 +7,7 @@ public class BulletCollisions : MonoBehaviour
     public Transform spawnOnDeath;
 
     public float lifeTime = 3f;
-
+    public GameObject OnHitFX;
     private void Start()
     {
         Invoke(nameof(DestroyBullet), lifeTime);
@@ -22,14 +22,15 @@ public class BulletCollisions : MonoBehaviour
 
     void DestroyBullet()
     {
-        if(spawnOnDeath)
-        {
-            Vector3 spawnPos = new Vector3(transform.position.x, 0f, transform.position.z);
-
+        Vector3 spawnPos = new Vector3(transform.position.x, 0f, transform.position.z);
+        if (spawnOnDeath)
+        { 
             Transform deathEffect= Instantiate(spawnOnDeath, spawnPos, spawnOnDeath.rotation);
             deathEffect.gameObject.SetActive(true);
         }
 
+        GameObject onHitFX = Instantiate(OnHitFX, spawnPos, OnHitFX.transform.rotation);
+        
         Destroy(gameObject);
     }
 }
