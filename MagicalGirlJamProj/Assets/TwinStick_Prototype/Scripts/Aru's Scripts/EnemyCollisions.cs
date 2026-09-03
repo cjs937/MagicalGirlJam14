@@ -8,6 +8,7 @@ public class EnemyCollisions : MonoBehaviour
     public Vector2 randomHealth = new Vector2 (3f, 5f);
     EnemyManager manager;
     EnemyBase baseScript;
+    StatLibrary StatsManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -98,7 +99,11 @@ public class EnemyCollisions : MonoBehaviour
             if(manager)
                 manager.RemoveEnemy(baseScript);
             else
+            {
                 Destroy(gameObject);
+                StatsManager.Gold += 5;
+            }
+                
             
         }
     }

@@ -11,9 +11,9 @@ public class GamblingScript : MonoBehaviour
 	// functionality
 	public bool canPull, inProgress;
 	public int winTime = 5;
-	public int cost;
+	public int cost = 10;
 	PlayerBulletFire RewardRef;
-	StatLibrary StatsManager;
+	//StatLibrary StatsManager;
 
 	//Player Scripts
 	public GameObject user;
@@ -33,10 +33,19 @@ public class GamblingScript : MonoBehaviour
 	}
 
 	//Are we close enough to use this
+	// we are now lol
 	private void OnTriggerStay(Collider collider)
 	{
-		if (collider.gameObject.tag == "Player")
-			canPull = true;
+		if (collider.gameObject.CompareTag("Player"))
+			if (StatLibrary.Instance.Gold >= cost)
+			{
+				canPull = true;
+                Debug.Log("You can gamnle");
+			}
+			else
+				Debug.Log("You you are borke or this is not working");
+			
+				
 	}
 
 	private void OnTriggerExit(Collider collider)
@@ -49,6 +58,7 @@ public class GamblingScript : MonoBehaviour
 	{
 		if (!canPull || inProgress) return;
 		Activate(player);
+		StatLibrary.Instance.Gold -= cost;
 	}
 
 	public virtual void Activate(GameObject player)
@@ -72,7 +82,7 @@ public class GamblingScript : MonoBehaviour
 				RewardRef.GiveMeBulletType(Random.Range(1, 4));
 				break;
 			case Rarity.StatWin:
-				StatsManager.attackPower++;
+				StatLibrary.Instance.attackPower += 2;
 				break;
 		}
     }
