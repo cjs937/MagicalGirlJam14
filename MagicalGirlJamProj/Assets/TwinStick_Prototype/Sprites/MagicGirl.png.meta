@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,13 +37,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -52,9 +52,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -108,12 +108,562 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: MagicGirl_0
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 4431
+        width: 765
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2e7b1cc9904abc428db5ec41537a662
+      internalID: 1827526049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_1
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 4437
+        width: 764
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4cf71fd1c2a104a8721c66799d16ff
+      internalID: 786961538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_2
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 4440
+        width: 765
+        height: 641
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffecd314b8f76c1458f428c424351eda
+      internalID: 401674939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_3
+      rect:
+        serializedVersion: 2
+        x: 3243
+        y: 4443
+        width: 765
+        height: 641
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d694e642e63bee549b33b3987cc04381
+      internalID: -1002082595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_4
+      rect:
+        serializedVersion: 2
+        x: 4280
+        y: 4448
+        width: 764
+        height: 641
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b2e8d7cb4f05f74c83cea7787381d86
+      internalID: 1704964594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_5
+      rect:
+        serializedVersion: 2
+        x: 5316
+        y: 4446
+        width: 765
+        height: 641
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 601abaaadf644f8489b8c71a07cbda55
+      internalID: -212520653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_6
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 3405
+        width: 765
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edba3227c6806fe41802f8ed91f78942
+      internalID: -653348898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_7
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 3399
+        width: 764
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f40e3ff0e1453548b59b542b6b406be
+      internalID: 171458361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_8
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 3396
+        width: 765
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ee6d7216b4331848ba217a6c1621855
+      internalID: -294427236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_9
+      rect:
+        serializedVersion: 2
+        x: 3243
+        y: 3393
+        width: 765
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73594248cd7c93349bae68e2e8e9741a
+      internalID: 1659577828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_10
+      rect:
+        serializedVersion: 2
+        x: 4280
+        y: 3387
+        width: 764
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85ac802ed459d443a9d13850c08fee7
+      internalID: 1285904584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_11
+      rect:
+        serializedVersion: 2
+        x: 5316
+        y: 3393
+        width: 765
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e240bbda57d080442bd21c1da9b31f44
+      internalID: 1705278315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_12
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 2337
+        width: 765
+        height: 642
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48b145977a0fdbf41b128851d61dcc14
+      internalID: 164035939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_13
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 2332
+        width: 764
+        height: 641
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea4a6170b3fbe5548b804fdca61e1b88
+      internalID: 1912112535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_14
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 2327
+        width: 765
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18cfe220a988773468c4c0dbb442aa29
+      internalID: 816413186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_15
+      rect:
+        serializedVersion: 2
+        x: 3243
+        y: 2321
+        width: 765
+        height: 641
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15aa5af8d0e5f4744a63d714a78b14b0
+      internalID: 2038952990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_16
+      rect:
+        serializedVersion: 2
+        x: 4280
+        y: 2315
+        width: 764
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88e75e37c10b6d341bead1a131c3aed9
+      internalID: -1991140798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_17
+      rect:
+        serializedVersion: 2
+        x: 5316
+        y: 2342
+        width: 765
+        height: 641
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c85dac06b8c41941956e4c2fecaa2ec
+      internalID: -422678836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_18
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 1264
+        width: 765
+        height: 641
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c90ca900f6e21a142aa400a4c4781ddd
+      internalID: -832678643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_19
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 1271
+        width: 764
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df25beb2c573d0f4cb30a0f905eb8b56
+      internalID: 393719433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_20
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 1277
+        width: 765
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e8ca874f5639e74986e9926f33aef14
+      internalID: -1853269839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_21
+      rect:
+        serializedVersion: 2
+        x: 3243
+        y: 1292
+        width: 765
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4247e7b5c9b4fd74c9dffbb192c7e45e
+      internalID: -2006083955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_22
+      rect:
+        serializedVersion: 2
+        x: 4280
+        y: 1298
+        width: 764
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 025902b196ba2b1419b237a5e31345e4
+      internalID: -2086730774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_23
+      rect:
+        serializedVersion: 2
+        x: 5316
+        y: 1289
+        width: 765
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a4e773e3af372742b27d56fed006204
+      internalID: -660729878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MagicGirl_24
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 239
+        width: 765
+        height: 641
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a28d7975485f9f84e9451608243a7739
+      internalID: -1566061966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 11d3e62c91570914a9786e9056c7e020
     internalID: 0
     vertices: []
     indices: 
@@ -121,8 +671,35 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      MagicGirl_0: 1827526049
+      MagicGirl_1: 786961538
+      MagicGirl_10: 1285904584
+      MagicGirl_11: 1705278315
+      MagicGirl_12: 164035939
+      MagicGirl_13: 1912112535
+      MagicGirl_14: 816413186
+      MagicGirl_15: 2038952990
+      MagicGirl_16: -1991140798
+      MagicGirl_17: -422678836
+      MagicGirl_18: -832678643
+      MagicGirl_19: 393719433
+      MagicGirl_2: 401674939
+      MagicGirl_20: -1853269839
+      MagicGirl_21: -2006083955
+      MagicGirl_22: -2086730774
+      MagicGirl_23: -660729878
+      MagicGirl_24: -1566061966
+      MagicGirl_3: -1002082595
+      MagicGirl_4: 1704964594
+      MagicGirl_5: -212520653
+      MagicGirl_6: -653348898
+      MagicGirl_7: 171458361
+      MagicGirl_8: -294427236
+      MagicGirl_9: 1659577828
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
