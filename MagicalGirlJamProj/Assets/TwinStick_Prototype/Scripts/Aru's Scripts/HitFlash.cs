@@ -35,7 +35,9 @@ public class HitFlash : MonoBehaviour
     {
         //StartCoroutine(SetHitFlash()); <--- Call this from enemy collider/trigger
         if (is2D && spriteRenderer)
+        {
             spriteRenderer.color = flashColor;
+        }
         else
             transform.GetComponent<MeshRenderer>().material = hitFlashMaterial; //Color.white;
 

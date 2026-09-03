@@ -63,7 +63,9 @@ public class PlayerBulletFire : MonoBehaviour
         BulletSpreadPool.Add(Spreadshotx3);
         BulletSpreadPool.Add(Spreadshotx5);
         BulletSpreadPool.Add(Radialshotx8);
-        
+
+        GiveMeBulletType(0);
+        GiveMeBulletSpread(0);
         //KnockbackBullet =  transform.Find("Bullet Type/Knockback Bullet");
     }
 
