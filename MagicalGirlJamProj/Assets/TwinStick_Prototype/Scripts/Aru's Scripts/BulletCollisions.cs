@@ -29,7 +29,7 @@ public class BulletCollisions : MonoBehaviour
             deathEffect.gameObject.SetActive(true);
         }
 
-        //GameObject onHitFX = Instantiate(OnHitFX, spawnPos, OnHitFX.transform.rotation);
+        GameObject onHitFX = Instantiate(OnHitFX, spawnPos, OnHitFX.transform.rotation);
         
         Destroy(gameObject);
     }
