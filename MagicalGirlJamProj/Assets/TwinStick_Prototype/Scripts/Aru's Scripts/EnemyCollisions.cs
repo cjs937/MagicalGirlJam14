@@ -97,6 +97,9 @@ public class EnemyCollisions : MonoBehaviour
             //gameObject.SetActive(false);
             if(manager)
                 manager.RemoveEnemy(baseScript);
+            else
+                Destroy(gameObject);
+            
         }
     }
 }

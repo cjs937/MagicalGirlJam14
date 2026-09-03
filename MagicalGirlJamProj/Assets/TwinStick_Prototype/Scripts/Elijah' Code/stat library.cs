@@ -9,7 +9,7 @@ public class StatLibrary : MonoBehaviour
     public static StatLibrary Instance;
     
     [Header("I'm gonna fucking hurt you")]
-    public float attackPower;
+    public float attackPower = 1;
     public int maxAmmunition = 15;
     public int currentAmmunition = 15;
     public float reloadTime = 3f;
