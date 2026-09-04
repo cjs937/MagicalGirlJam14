@@ -41,7 +41,7 @@ public class PlayerAttackScript : MonoBehaviour
 
 	private void Update()
 	{
-		ManageMagicSliders();
+		//ManageMagicSliders();
 	}
 
 	void ManageMagicSliders()
