@@ -8,6 +8,7 @@ public class GameStateManager : MonoBehaviour
     //public Canvas canvas;
     //public GameObject gameOverInstance;
     PlayerMovementScript playerMovementScript;
+    PlayerBulletFire playerBulletFire;
     EnemyManager enemyManager;
     TimerScript timer;
     public TextMeshProUGUI timerText;
@@ -15,6 +16,7 @@ public class GameStateManager : MonoBehaviour
     void Start()
     {
         playerMovementScript = FindAnyObjectByType<PlayerMovementScript>();
+        playerBulletFire = FindAnyObjectByType<PlayerBulletFire>();
         enemyManager = FindAnyObjectByType<EnemyManager>();
         timer = FindAnyObjectByType<TimerScript>();
         gameOverScreen.SetActive(false);
@@ -23,6 +25,7 @@ public class GameStateManager : MonoBehaviour
     public void GameOver()
     {
         playerMovementScript.enabled = false;
+        playerBulletFire.enabled = false;
         enemyManager.StopAllEnemies();
         timerText.text = "You lasted " + Mathf.Floor(timer.time).ToString() + " seconds! \n" + 
             "Enemy kills: " + enemyManager.killCount;
