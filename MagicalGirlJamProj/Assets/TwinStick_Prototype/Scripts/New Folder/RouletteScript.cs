@@ -7,6 +7,7 @@ public class RouletteScript : GamblingScript
 {
 	int pocketIndex;
 	float currentSpin;
+	GameObject spinner;
 	public float spinSpeed;
 	
 	float pocketSize;
@@ -19,12 +20,12 @@ public class RouletteScript : GamblingScript
 		if (gambleView == null)
 		{
 			gambleView = Instantiate(uiPrefab, panel);
-			gambleView = gambleView.transform.GetChild(0).gameObject;
-			gambleView.transform.eulerAngles = new Vector3(0, 0, Random.Range(0, 18) * 20);
+			spinner = gambleView.transform.GetChild(0).gameObject;
+			spinner.transform.eulerAngles = new Vector3(0, 0, Random.Range(0, 18) * 20);
 
 			pockets = new List<Transform>();
 
-			foreach (Transform child in gambleView.transform)
+			foreach (Transform child in spinner.transform)
 				pockets.Add(child);
 		}
 
@@ -40,7 +41,7 @@ public class RouletteScript : GamblingScript
 
 		while (currentSpin > .5f)
 		{
-			gambleView.transform.eulerAngles += new Vector3(0, 0, currentSpin * Time.deltaTime);
+			spinner.transform.eulerAngles += new Vector3(0, 0, currentSpin * Time.deltaTime);
 			spinTime += Time.deltaTime;
 			await Task.Yield();
 
@@ -48,7 +49,7 @@ public class RouletteScript : GamblingScript
 				currentSpin -= currentSpin * Time.deltaTime;
 		}
 
-		float angle = gambleView.transform.eulerAngles.z;
+		float angle = spinner.transform.eulerAngles.z;
 		float cAngle = (360 - angle) % 360;
 
 		pocketIndex = Mathf.FloorToInt(((cAngle + pocketSize / 2) / pocketSize) % pockets.Count);
@@ -56,7 +57,7 @@ public class RouletteScript : GamblingScript
 
 		while (spinTime < 1f)
 		{
-			gambleView.transform.rotation = Quaternion.Slerp(gambleView.transform.rotation, Quaternion.Euler(0, 0, finalAngle), Time.deltaTime);
+			spinner.transform.rotation = Quaternion.Slerp(spinner.transform.rotation, Quaternion.Euler(0, 0, finalAngle), Time.deltaTime);
 			spinTime += Time.deltaTime;
 			await Task.Yield();
 		}
