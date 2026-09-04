@@ -34,6 +34,8 @@ public class RouletteScript : GamblingScript
 	async void Spin()
 	{
 		float spinTime = 0;
+		currentSpin *= Random.Range(.75f, 5f);
+
 		while (currentSpin > .5f)
 		{
 			gambleView.transform.eulerAngles += new Vector3(0, 0, currentSpin * Time.deltaTime);
@@ -51,7 +53,7 @@ public class RouletteScript : GamblingScript
 
 		while (spinTime < 1f)
 		{
-			gambleView.transform.eulerAngles = new Vector3(0, 0, Mathf.LerpAngle(angle, finalAngle, Time.deltaTime * 100));
+			gambleView.transform.rotation = Quaternion.Slerp(gambleView.transform.rotation, Quaternion.Euler(0,0,finalAngle), Time.deltaTime);
 			spinTime += Time.deltaTime;
 		}
 
