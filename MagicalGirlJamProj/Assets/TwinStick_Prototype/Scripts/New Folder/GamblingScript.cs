@@ -34,11 +34,7 @@ public class GamblingScript : MonoBehaviour
 
 		if (timeOnScreen > 10)
 			if (gambleView != null)
-			{
-				foreach (Transform child in gambleView.transform)
-					Destroy(child);
 				Destroy(gambleView.gameObject);
-			}
 }
 
 	//Are we close enough to use this
