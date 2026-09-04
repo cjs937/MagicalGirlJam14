@@ -2281,7 +2281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   gambleView: {fileID: 0}
   panel: {fileID: 40520010}
-  uiPrefab: {fileID: 0}
+  uiPrefab: {fileID: 4701487501175307485, guid: 3411bace96bfa2e458c75ac1ef17ae6f, type: 3}
   canPull: 0
   inProgress: 0
   winTime: 8

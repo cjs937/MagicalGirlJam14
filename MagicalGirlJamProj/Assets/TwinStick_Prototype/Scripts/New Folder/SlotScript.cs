@@ -62,19 +62,24 @@ public class SlotScript : GamblingScript
 				rarity++;
 
 		int match = 0;
-		if (slots[0] == slots[1])
+		if (slots[0].sprite == slots[1].sprite)
 			match++;
-		if (slots[1] == slots[2])
+		if (slots[1].sprite == slots[2].sprite)
 			match++;
-		if (slots[0] == slots[2])
+		if (slots[0].sprite == slots[2].sprite)
 			match++;
 
 		rarity = Mathf.Min(5, rarity + match);
 
 		if (rarity > 0)
 		{
+<<<<<<< Updated upstream
 			Win(Rarity.BulletTypeWin);
 			for (int i = 0; i < winTime; i++)
+=======
+			Win((Rarity)rarity);
+			for (int i = 0; i < rarity; i++)
+>>>>>>> Stashed changes
 			{
 				inProgress = true;
 
@@ -87,6 +92,7 @@ public class SlotScript : GamblingScript
 				await Task.Delay(500);
 			}
 		}
+		else Loss();
 
 		inProgress = false;
 	}
