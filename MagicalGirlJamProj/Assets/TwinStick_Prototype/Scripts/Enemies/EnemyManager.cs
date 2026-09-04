@@ -33,7 +33,9 @@ public class EnemyManager : MonoBehaviour
 
     void SpawnNewEnemy()
     {
-        EnemyBase enemyType = enemyTypes[Random.Range(0, enemyTypes.Count)];
+        EnemyBase enemyType = curveIndex > 2 ? enemyTypes[Random.Range(0, enemyTypes.Count)] : 
+            curveIndex > 1 ? enemyTypes[Random.Range(0, 2)] :
+            enemyTypes[0];
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
 
         EnemyBase newEnemy = Instantiate(enemyType);
