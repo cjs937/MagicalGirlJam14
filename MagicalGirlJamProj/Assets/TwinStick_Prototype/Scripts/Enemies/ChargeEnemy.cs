@@ -6,7 +6,7 @@ public class ChargeEnemy : EnemyBase
     float currentDelay = 0f;
     float delayTimer = 0f;
     public float chargeForce = 10f;
-
+    bool charging = false;
     void StartNextDelay()
     {
         currentDelay = Random.Range(chargeDelayRange.x, chargeDelayRange.y);
@@ -17,9 +17,17 @@ public class ChargeEnemy : EnemyBase
         delayTimer += Time.deltaTime;
         if (delayTimer >= currentDelay)
         {
-            Vector3 chargeVec = Vector3.Normalize(playerPos.position - transform.position) * chargeForce;
             rigidBody.linearVelocity = Vector3.zero;
-            rigidBody.AddForce(chargeVec);
+            if (!charging)
+            {
+                Vector3 chargeVec = Vector3.Normalize(playerPos.position - transform.position) * chargeForce;
+
+                rigidBody.AddForce(chargeVec);
+
+                charging = true;
+            }
+            else
+                charging = false;
 
             StartNextDelay();
         }

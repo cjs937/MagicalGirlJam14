@@ -6,7 +6,10 @@ public class SeekEnemy : EnemyBase
 
     protected override void DoMove()
     {
-        Vector3 desiredVelocity = Vector3.Normalize(playerPos.position - transform.position) * moveSpeed * Time.deltaTime;
-        rigidBody.linearVelocity += desiredVelocity;//(desiredVelocity - rigidBody.linearVelocity) * Time.deltaTime;
+        if (rigidBody.linearVelocity.magnitude < moveSpeed)
+        {
+            Vector3 desiredVelocity = Vector3.Normalize(playerPos.position - transform.position) * moveSpeed * Time.deltaTime;
+            rigidBody.linearVelocity += desiredVelocity;//(desiredVelocity - rigidBody.linearVelocity) * Time.deltaTime;
+        }
     }
 }
