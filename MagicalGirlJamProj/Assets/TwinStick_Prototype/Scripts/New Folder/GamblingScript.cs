@@ -20,7 +20,12 @@ public class GamblingScript : MonoBehaviour
 
 	public enum Rarity {StatWin,BulletTypeWin,BulletModeWin,BigBulletModeWin};
 
-	private void Update()
+    private void Start()
+    {
+		RewardRef = FindAnyObjectByType<PlayerBulletFire>();
+    }
+
+    private void Update()
 	{
 		if (!inProgress && gambleView != null)
 			timeOnScreen += Time.deltaTime;
@@ -40,7 +45,6 @@ public class GamblingScript : MonoBehaviour
 			if (StatLibrary.Instance.Gold >= cost)
 			{
 				canPull = true;
-                Debug.Log("You can gamnle");
 			}
 			else
 				Debug.Log("You you are borke or this is not working");

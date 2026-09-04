@@ -11,11 +11,6 @@ public class CrapsScript : GamblingScript
 	public Image die1, die2;
     [SerializeField] List<Sprite> dieFaces;
 
-    void Start()
-    {
-        
-    }
-
 	public override void Activate(GameObject player)
 	{
 		base.Activate(player);
