@@ -8,6 +8,8 @@ public class RouletteScript : GamblingScript
 	int pocketIndex;
 	float currentSpin;
 	public float spinSpeed;
+	
+	float pocketSize;
 	List<Transform> pockets;
 
 	public override void Activate(GameObject player)
@@ -26,8 +28,8 @@ public class RouletteScript : GamblingScript
 				pockets.Add(child);
 		}
 
+		pocketSize = 360f / pockets.Count;
 		currentSpin = spinSpeed;
-		Debug.Log(gambleView);
 		Spin();
 	}
 
@@ -46,15 +48,17 @@ public class RouletteScript : GamblingScript
 				currentSpin -= currentSpin * Time.deltaTime;
 		}
 
-		spinTime = 0;
-		float angle = gambleView.transform.eulerAngles.z % 360;
-		pocketIndex = Mathf.CeilToInt(angle / 360 * pockets.Count);
-		float finalAngle = pocketIndex * (360 / pockets.Count);
+		float angle = gambleView.transform.eulerAngles.z;
+		float cAngle = (360 - angle) % 360;
+
+		pocketIndex = Mathf.FloorToInt(((cAngle + pocketSize / 2) / pocketSize) % pockets.Count);
+		float finalAngle = pocketIndex * pocketSize;
 
 		while (spinTime < 1f)
 		{
-			gambleView.transform.rotation = Quaternion.Slerp(gambleView.transform.rotation, Quaternion.Euler(0,0,finalAngle), Time.deltaTime);
+			gambleView.transform.rotation = Quaternion.Slerp(gambleView.transform.rotation, Quaternion.Euler(0, 0, finalAngle), Time.deltaTime);
 			spinTime += Time.deltaTime;
+			await Task.Yield();
 		}
 
 		inProgress = false;

@@ -54,32 +54,12 @@ public class SlotScript : GamblingScript
 
 	async void CheckRewards()
 	{
-		int rarity = 0;
-
 		inProgress = false;
-		for (int i = 1; i < slots.Count; i++)
-			if (slots[i].sprite == winSprite)
-				rarity++;
 
-		int match = 0;
-		if (slots[0].sprite == slots[1].sprite)
-			match++;
-		if (slots[1].sprite == slots[2].sprite)
-			match++;
-		if (slots[0].sprite == slots[2].sprite)
-			match++;
-
-		rarity = Mathf.Min(5, rarity + match);
-
-		if (rarity > 0)
+		if (slots[0].sprite == slots[1].sprite && slots[1].sprite == slots[2].sprite)
 		{
-<<<<<<< Updated upstream
 			Win(Rarity.BulletTypeWin);
 			for (int i = 0; i < winTime; i++)
-=======
-			Win((Rarity)rarity);
-			for (int i = 0; i < rarity; i++)
->>>>>>> Stashed changes
 			{
 				inProgress = true;
 
