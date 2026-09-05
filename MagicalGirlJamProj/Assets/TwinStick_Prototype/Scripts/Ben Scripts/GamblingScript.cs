@@ -60,7 +60,7 @@ public class GamblingScript : MonoBehaviour
 
 	public void TryActivate(GameObject player)
 	{
-		if (!canPull || inProgress) return;
+		if (!canPull || inProgress || PauseScript.paused) return;
 		Activate(player);
 		StatLibrary.Instance.Gold -= cost;
 	}

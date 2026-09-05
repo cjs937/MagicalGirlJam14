@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
@@ -8,7 +9,7 @@ public class PauseScript : MonoBehaviour
 
     void Start()
     {
-        pauseScript = this;    
+        pauseScript = this;
     }
 
     public void Pause()
@@ -17,6 +18,8 @@ public class PauseScript : MonoBehaviour
         foreach (Transform child in transform)
             child.gameObject.SetActive(true);
         Time.timeScale = 0;
+
+        EventSystem.current.SetSelectedGameObject(transform.GetChild(0).gameObject);
 	}
 
 	public void Resume()
