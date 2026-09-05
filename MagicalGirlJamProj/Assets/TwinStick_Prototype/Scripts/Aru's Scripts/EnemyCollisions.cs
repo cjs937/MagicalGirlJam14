@@ -6,6 +6,8 @@ public class EnemyCollisions : MonoBehaviour
 {
     public float health;
     public Vector2 randomHealth = new Vector2 (3f, 5f);
+    public Transform deathParticle;
+
     EnemyManager manager;
     EnemyBase baseScript;
     StatLibrary StatsManager;
@@ -94,8 +96,9 @@ public class EnemyCollisions : MonoBehaviour
     {
         if(health <= 0f)
         {
-            //player.GetComponent<TopDownKillCounter>().killCount += 1f;
-            //gameObject.SetActive(false);
+            Transform activeParticle = Instantiate(deathParticle, transform.position, transform.rotation);
+            activeParticle.gameObject.SetActive(true);
+
             if(manager)
                 manager.RemoveEnemy(baseScript);
             else

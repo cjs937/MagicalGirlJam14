@@ -2,13 +2,12 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using DG.Tweening;
 
 public class PlayerBulletFire : MonoBehaviour
 {
     [SerializeField] private InputActionReference m_bulletFire;
 
-    
-    
     [Header("Projectile Prefabs")]
     [SerializeField] Transform Cur_bullet;
     [SerializeField] Transform Cur_bulletSpread;
@@ -17,8 +16,13 @@ public class PlayerBulletFire : MonoBehaviour
     private bool fireBullet;
     private float nextFire = 0f;
     public float projectileSpeed = 500f;
-    
 
+    public Transform reticule;
+    public Transform spawnParticle;
+
+    public Transform spotlight;
+    public float spotlightTime = .15f;
+    public Vector3 spotlightStartScale;
     [Header("Weapon Type")]
     
 
@@ -40,11 +44,10 @@ public class PlayerBulletFire : MonoBehaviour
     
     private List<Transform> BulletSpreadPool = new List<Transform>();
     
-    /*
     [Header("Audio Clips")]
     public AudioClip[] clips;
     public float clipVolume = 1f;
-    */
+
     void Start()
     {
         m_bulletFire.action.Enable();
@@ -67,6 +70,7 @@ public class PlayerBulletFire : MonoBehaviour
         GiveMeBulletType(0);
         GiveMeBulletSpread(0);
         //KnockbackBullet =  transform.Find("Bullet Type/Knockback Bullet");
+        spotlightStartScale = spotlight.localScale;
     }
 
     void StartBulletFire(InputAction.CallbackContext obj)
@@ -87,14 +91,38 @@ public class PlayerBulletFire : MonoBehaviour
 
             for(int i = 1; i < bulletSpawns.Length; i++)
             {
+                if(spawnParticle != null)
+                {
+                    Transform activeParticle = Instantiate(spawnParticle, bulletSpawns[i].position, bulletSpawns[i].rotation);
+                    activeParticle.parent = null;
+                    activeParticle.gameObject.SetActive(true);
+                }
+
+                //Vector3 currentScale = Cur_bullet.localScale;
+                //Cur_bullet.localScale = new Vector3(0f, 0f, 0f);
+
                 Transform activeBullet = Instantiate(Cur_bullet, bulletSpawns[i].position, Cur_bullet.rotation);
                 activeBullet.gameObject.SetActive(true);
                 activeBullet.GetComponent<Rigidbody>().AddForce(bulletSpawns[i].forward * projectileSpeed);
             }
 
+            StartCoroutine(LightFlash());
+
+            if(reticule != null && reticule.GetComponent<ReticuleHitFlash>() != null)
+            {
+                reticule.GetComponent<ReticuleHitFlash>().PlayFlash();
+            }
+
+            if(clips.Length > 0 && transform.GetComponent<AudioSource>() != null)
+            {
+                transform.GetComponent<AudioSource>().pitch = Random.Range(0.65f, 1.1f);
+                transform.GetComponent<AudioSource>().PlayOneShot(clips[Random.Range(0, clips.Length)], clipVolume);
+            }
+            
             StatLibrary.Instance.currentAmmunition -= 1;
         }
-        else
+
+        if(StatLibrary.Instance.currentAmmunition <= 0)
         {
             StartCoroutine(BulletFireReload());
         }
@@ -106,7 +134,16 @@ public class PlayerBulletFire : MonoBehaviour
         StatLibrary.Instance.currentAmmunition = StatLibrary.Instance.maxAmmunition;
     }
 
+    public IEnumerator LightFlash()
+    {
+        spotlight.DOKill();
 
+        spotlight.gameObject.SetActive(true);
+        spotlight.DOScale(spotlightStartScale, spotlightTime).SetEase(Ease.OutQuad);;
+
+        yield return new WaitForSeconds(spotlightTime);
+        spotlight.gameObject.SetActive(false);
+    }
 
     public void GiveMeBulletType(int WeaponID)
     {

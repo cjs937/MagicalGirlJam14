@@ -1811,7 +1811,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc14675e9a45864d9ec486706f917ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  enemySpeed: 0
+  enemySpeed: 0.5
+  enemies: []
+  enemyStartSpeed: []
+  timeLimit: 3
 --- !u!136 &758710869
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1899,7 +1902,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758710866}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a4935bb8c6ec78449cf8a6edde4b562, type: 3}
   m_Name: 
@@ -5774,7 +5777,7 @@ GameObject:
   - component: {fileID: 2044938479}
   - component: {fileID: 2044938478}
   m_Layer: 0
-  m_Name: Slots
+  m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6398,7 +6401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   m_bulletFire: {fileID: 1120369429361536294, guid: 1a6a806e71022264983350d2cbc88724, type: 3}
-  bullet: {fileID: 2077281243}
+  bullet: {fileID: 331504527}
   bulletSpread: {fileID: 918981971}
   projectileSpeed: 500
   fireRate: 0.5

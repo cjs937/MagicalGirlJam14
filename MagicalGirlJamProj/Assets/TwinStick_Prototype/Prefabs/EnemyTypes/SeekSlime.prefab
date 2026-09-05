@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   health: 0
   randomHealth: {x: 3, y: 5}
+  deathParticle: {fileID: 8229291189109432187, guid: 83ed30ee99755964b8f6159ba2a289e2, type: 3}
 --- !u!114 &3967589140831501705
 MonoBehaviour:
   m_ObjectHideFlags: 0
