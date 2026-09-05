@@ -196,21 +196,22 @@ public class PlayerBulletFire : MonoBehaviour
     
     void Update()
     {
-       
-        
-        
+
+
+
         //GiveMeBulletSpread(0);
         //GiveMeBulletType(0);
-        
-        if(fireBullet)
+        if (!PauseScript.paused)
         {
-            if(Time.time > nextFire)
+            if (fireBullet)
             {
-                BulletFire();
-                nextFire = Time.time + StatLibrary.Instance.fireRate;
+                if (Time.time > nextFire)
+                {
+                    BulletFire();
+                    nextFire = Time.time + StatLibrary.Instance.fireRate;
+                }
             }
         }
-        
         
         
         
