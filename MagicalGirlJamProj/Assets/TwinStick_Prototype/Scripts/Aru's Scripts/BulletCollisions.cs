@@ -16,8 +16,13 @@ public class BulletCollisions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag != "Player" && other.tag != "Bullet")
-            DestroyBullet();
+        if (other.CompareTag("Player") || other.CompareTag("Bullet"))
+            return;
+
+        if (other.CompareTag("Enemy"))
+            return;
+
+        DestroyBullet();
     }
 
     void DestroyBullet()
