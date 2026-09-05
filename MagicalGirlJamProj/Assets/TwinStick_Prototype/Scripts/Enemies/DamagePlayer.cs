@@ -18,16 +18,16 @@ public class DamagePlayer : MonoBehaviour
             DoDamage(damage, playerHealth);
         }
     }
-    public void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision other)
     {
-        playerHealth = other.GetComponent<PlayerHealth>();
+        playerHealth = other.transform.GetComponent<PlayerHealth>();
         if(!continuousOverlap && playerHealth)
         {
             DoDamage(damage, playerHealth);
         }
     }
 
-    public void OnTriggerExit(Collider other)
+    public void OnCollisionExit(Collision other)
     {
         if(playerHealth && other.gameObject == playerHealth.gameObject)
         {
