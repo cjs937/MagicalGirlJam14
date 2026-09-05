@@ -61,4 +61,12 @@ public class PlayerMovementScript : MonoBehaviour
 				0, Mathf.Atan2(normal.x, normal.z) * Mathf.Rad2Deg, 0);
 		}
 	}
+
+	void OnPause()
+	{
+		if (PauseScript.paused)
+			PauseScript.pauseScript.Resume();
+		else
+			PauseScript.pauseScript.Pause();
+	}
 }
