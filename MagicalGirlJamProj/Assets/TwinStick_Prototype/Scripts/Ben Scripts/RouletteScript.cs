@@ -38,6 +38,7 @@ public class RouletteScript : GamblingScript
 	{
 		float spinTime = 0;
 		currentSpin *= Random.Range(.75f, 5f);
+		if (spinner == null) return;
 
 		while (currentSpin > .5f)
 		{

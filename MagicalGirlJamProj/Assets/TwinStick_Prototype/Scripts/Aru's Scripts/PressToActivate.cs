@@ -3,11 +3,10 @@ using UnityEngine;
 public class PressToActivate : MonoBehaviour
 {
     public Transform player;
-    public float activationDistance;
-
     public Transform activationUI;
+	GamblingScript gamblingScript;
 
-    public bool playerInRange;
+	public bool playerInRange;
 
     [Header("Audio Clips")]
     public AudioClip[] clips;
@@ -15,13 +14,13 @@ public class PressToActivate : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        gamblingScript = GetComponent<GamblingScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(player.position, transform.position) <= activationDistance)
+        if(gamblingScript.canPull)
         {
             if (!playerInRange)
             {
@@ -33,12 +32,14 @@ public class PressToActivate : MonoBehaviour
                     transform.GetComponent<AudioSource>().PlayOneShot(clips[Random.Range(0, clips.Length)], clipVolume);
                 }
             }
-        }
-        else
+			activationUI.gameObject.SetActive(true);
+		}
+		else
         {
-            playerInRange = false;
-        }
+            if (playerInRange)
+				activationUI.gameObject.SetActive(false);
 
-        activationUI.gameObject.SetActive(playerInRange);
+			playerInRange = false;
+        }
     }
 }

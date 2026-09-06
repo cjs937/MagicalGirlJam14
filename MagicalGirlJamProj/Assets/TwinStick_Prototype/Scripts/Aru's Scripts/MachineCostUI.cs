@@ -1,32 +1,37 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using System.Collections.Generic;
 
 public class MachineCostUI : MonoBehaviour
 {
-    public Transform machine;
+    public List<Transform> machines;
     public TextMeshProUGUI costUI;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(machine.GetComponent<RouletteScript>() != null)
+        foreach (Transform machine in machines)
         {
-            costUI.text = "COST " + machine.GetComponent<RouletteScript>().cost + " COINS";
-        }
+			SlotScript slots = machine.GetComponent<SlotScript>();
+			CrapsScript craps = machine.GetComponent<CrapsScript>();
+			RouletteScript roulette= machine.GetComponent<RouletteScript>();
 
-        if(machine.GetComponent<SlotScript>() != null)
-        {
-            costUI.text = "COST " + machine.GetComponent<SlotScript>().cost + " COINS";
-        }
+			if (roulette != null && roulette.canPull)
+			{
+				costUI.text = "COST " + roulette.cost + " COINS";
+				return;
+			}
 
-        if(machine.GetComponent<CrapsScript>() != null)
-        {
-            costUI.text = "COST " + machine.GetComponent<CrapsScript>().cost + " COINS";
-        }
-    }
+			if (craps != null && craps.canPull)
+			{
+				costUI.text = "COST " + craps.cost + " COINS";
+				return;
+			}
+
+			if (slots != null && slots.canPull)
+			{
+				costUI.text = "COST " + slots.cost + " COINS";
+				return;
+			}
+		}
+	}
 }
