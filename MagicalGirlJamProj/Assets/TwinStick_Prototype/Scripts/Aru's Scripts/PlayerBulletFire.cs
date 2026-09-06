@@ -59,7 +59,7 @@ public class PlayerBulletFire : MonoBehaviour
         BulletTypePool.Add(BasicBullet);
         BulletTypePool.Add(KnockbackBullet);
         BulletTypePool.Add(CritBullet);
-        BulletTypePool.Add(SlowBullet);
+        //BulletTypePool.Add(SlowBullet);
         BulletTypePool.Add(ExplosiveBullet);
         
         BulletSpreadPool.Add(Singleshot);
@@ -159,7 +159,7 @@ public class PlayerBulletFire : MonoBehaviour
                 Cur_bullet = CritBullet;
                 break;
             case <= 3:
-                Cur_bullet = SlowBullet;
+                Cur_bullet = ExplosiveBullet;
                 break;
             case <= 4:
                 Cur_bullet = ExplosiveBullet;
