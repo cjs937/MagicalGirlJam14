@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3553976193422452370}
   - component: {fileID: 7500629404568189623}
   - component: {fileID: 3515020154552101833}
+  - component: {fileID: -5096250049259587920}
   m_Layer: 0
   m_Name: Slime Death Particle
   m_TagString: Untagged
@@ -4955,6 +4956,19 @@ ParticleSystemRenderer:
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
+--- !u!114 &-5096250049259587920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815935091834622904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4935bb8c6ec78449cf8a6edde4b562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DestroyOverTime
+  destroyTimer: 3
 --- !u!1 &6817392132940070944
 GameObject:
   m_ObjectHideFlags: 0

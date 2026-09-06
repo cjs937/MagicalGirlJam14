@@ -12,12 +12,23 @@ public class EnemyCollisions : MonoBehaviour
     EnemyBase baseScript;
     StatLibrary StatsManager;
 
+    [Header("Audio Clips")]
+    public AudioSource audioSource;
+    public AudioClip[] clips;
+    public float clipVolume = 1f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        health = Random.Range(randomHealth.x, randomHealth.y);
+        health = (int) Random.Range(randomHealth.x, randomHealth.y);
         manager = FindAnyObjectByType<EnemyManager>();
         baseScript = GetComponent<EnemyBase>();
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        audioSource = player.GetComponent<AudioSource>();
+
+        GameObject statman = GameObject.FindGameObjectWithTag("StatsManager");
+        StatsManager = statman.GetComponent<StatLibrary>();
     }
 
     // Update is called once per frame
@@ -32,8 +43,16 @@ public class EnemyCollisions : MonoBehaviour
         {
             Transform bullet = other.transform;
             string bulletType = other.transform.GetComponent<BulletCollisions>().bulletType;
+            //float bulletDamage = other.transform.GetComponent<BulletCollisions>().bulletDamage;
             float bulletDamage = StatLibrary.Instance.attackPower;
 
+            if(clips.Length > 0 && audioSource != null)
+            {
+                audioSource.PlayOneShot(clips[Random.Range(0, clips.Length)], clipVolume);
+                //transform.GetComponent<AudioSource>().pitch = Random.Range(0.65f, 1.1f);
+                //transform.GetComponent<AudioSource>().PlayOneShot(clips[Random.Range(0, clips.Length)], clipVolume);
+            }
+            
             if(bulletType == "BASIC")
             {
                 TakeDamage(bulletDamage);
@@ -96,15 +115,19 @@ public class EnemyCollisions : MonoBehaviour
     {
         if(health <= 0f)
         {
-            Transform activeParticle = Instantiate(deathParticle, transform.position, transform.rotation);
-            activeParticle.gameObject.SetActive(true);
+            StatsManager.Gold += 5;
 
+            if(deathParticle != null)
+            {
+                Transform activeParticle = Instantiate(deathParticle, transform.position, transform.rotation);
+                activeParticle.gameObject.SetActive(true);
+            }
+            
             if(manager)
                 manager.RemoveEnemy(baseScript);
             else
             {
                 Destroy(gameObject);
-                StatsManager.Gold += 5;
             }
                 
             
