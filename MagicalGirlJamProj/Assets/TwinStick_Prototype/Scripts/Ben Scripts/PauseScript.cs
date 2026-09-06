@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
 {
@@ -34,4 +35,9 @@ public class PauseScript : MonoBehaviour
 		img.enabled = false;
 		Time.timeScale = 1;
 	}
+
+    public void QuitGame()
+    {
+        SceneManager.LoadScene("TitleScreen");
+    }
 }

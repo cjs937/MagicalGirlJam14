@@ -9,8 +9,8 @@ public class PlayerBulletFire : MonoBehaviour
     [SerializeField] private InputActionReference m_bulletFire;
 
     [Header("Projectile Prefabs")]
-    [SerializeField] Transform Cur_bullet;
-    [SerializeField] Transform Cur_bulletSpread;
+    [SerializeField] public Transform Cur_bullet;
+    [SerializeField] public Transform Cur_bulletSpread;
 
     [Header("Projectile Settings")]
     private bool fireBullet;
@@ -101,7 +101,7 @@ public class PlayerBulletFire : MonoBehaviour
                 //Vector3 currentScale = Cur_bullet.localScale;
                 //Cur_bullet.localScale = new Vector3(0f, 0f, 0f);
 
-                Transform activeBullet = Instantiate(Cur_bullet, bulletSpawns[i].position, Cur_bullet.rotation);
+                Transform activeBullet = Instantiate(Cur_bullet, bulletSpawns[i].position, bulletSpawns[i].rotation);
                 activeBullet.gameObject.SetActive(true);
                 activeBullet.GetComponent<Rigidbody>().AddForce(bulletSpawns[i].forward * projectileSpeed);
             }
