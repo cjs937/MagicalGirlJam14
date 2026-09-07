@@ -68,7 +68,7 @@ public class SlotScript : GamblingScript
 				await Task.Delay(500);
 
 				foreach (Image img in slots)
-					img.color = Color.black;
+					img.color = Color.white;
 				await Task.Delay(500);
 			}
 		}

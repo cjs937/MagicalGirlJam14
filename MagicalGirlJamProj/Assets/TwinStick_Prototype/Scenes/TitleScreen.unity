@@ -495,6 +495,10 @@ PrefabInstance:
       propertyPath: m_Resource
       value: 
       objectReference: {fileID: 8300000, guid: 2f7f195d6f35e1e42bd02e4d568b55c7, type: 3}
+    - target: {fileID: 3144575330983309952, guid: 7b2f933ddae0bf645ba4770f5562dd90, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3210709949554169424, guid: 7b2f933ddae0bf645ba4770f5562dd90, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -538,6 +542,10 @@ PrefabInstance:
     - target: {fileID: 3568885239973313204, guid: 7b2f933ddae0bf645ba4770f5562dd90, type: 3}
       propertyPath: m_Name
       value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 3568885239973313204, guid: 7b2f933ddae0bf645ba4770f5562dd90, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -668,6 +676,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6614325808493932193, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_text
+      value: "Art: Briea, Dominque, & Jocelyn\n\nDesign: Aru, Ben, & Nintaku17\n\nProgramming:
+        Aru, Ben, Cory, \n      Alucard & Nintaku17\n\nMusic: Dominique "
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614325808493932193, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_fontSize
+      value: 28.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614325808493932193, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614325808493932193, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 28.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211218491292361381, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_text
+      value: 'Magical Girl
+
+        Slime Roulette'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211218491292361381, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_fontSize
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211218491292361381, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211218491292361381, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.39607847
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211218491292361381, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.25490198
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211218491292361381, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.48627454
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211218491292361381, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211218491292361381, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4284825980
+      objectReference: {fileID: 0}
     - target: {fileID: 8337605290447917550, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -684,12 +743,62 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8531290143139967948, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 600.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531290143139967948, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -127.8
+      objectReference: {fileID: 0}
     - target: {fileID: 8758336660258493884, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8761908685536631188, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761908685536631188, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99780834
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761908685536631188, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0013429339
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761908685536631188, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0036210255
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761908685536631188, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.06605826
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761908685536631188, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 575.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761908685536631188, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -60.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761908685536631188, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.181
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761908685536631188, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0.404
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761908685536631188, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 7.575
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6561946048423715956, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
+    - {fileID: 7135362120434888242, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c86eac096328414f9b431a69acb86dd, type: 3}
